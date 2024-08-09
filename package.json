@@ -15,6 +15,12 @@
   "publisher": "Abdullah Ali",
   "main": "./dist/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "ayat.showAyat",
+        "title": "Show Ayat"
+      }
+    ],
     "configuration": {
       "title": "Ayat Configuration",
       "properties": {
