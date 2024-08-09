@@ -9,15 +9,12 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "*"
+  ],
+  "publisher": "Abdullah Ali",
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "ayat.showAyah",
-        "title": "Show Ayat"
-      }
-    ],
     "configuration": {
       "title": "Ayat Configuration",
       "properties": {
