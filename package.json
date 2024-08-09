@@ -14,10 +14,29 @@
   "contributes": {
     "commands": [
       {
-        "command": "ayat.helloWorld",
-        "title": "Hello World"
+        "command": "ayat.showAyah",
+        "title": "Show Ayat"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Ayat Configuration",
+      "properties": {
+        "ayat.ayahMode": {
+          "type": "string",
+          "default": "sequential",
+          "enum": [
+            "sequential",
+            "random"
+          ],
+          "description": "Select ayah display mode"
+        },
+        "ayat.showTafseerInitially": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show tafseer initially"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
