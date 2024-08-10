@@ -5,6 +5,7 @@
   "version": "v1.0.0",
   "publisher": "Abdullah-Ali",
   "icon": "icon.jpeg",
+  "repository": "https://github.com/Abdullah-A-Elsayed/AyaCode",
   "license": "MIT",
   "engines": {
     "vscode": "^1.92.0"
