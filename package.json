@@ -1,8 +1,10 @@
 {
   "name": "aya.code",
   "displayName": "AyaCode",
-  "description": "This plugin provides an interactive way to display a verse (Aya) from the Quran in a dialog box each time you start a new session. Choose between displaying verses in a random order or sequentially to suit your preferences.",
+  "description": "Start Your Coding Session with a Verse of Quran",
   "version": "v1.0.0",
+  "publisher": "Abdullah Ali",
+  "icon": "icon.jpeg",
   "license": "MIT",
   "engines": {
     "vscode": "^1.92.0"
@@ -13,7 +15,6 @@
   "activationEvents": [
     "*"
   ],
-  "publisher": "Abdullah Ali",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
