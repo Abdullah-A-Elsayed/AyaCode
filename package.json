@@ -34,7 +34,7 @@
           ],
           "description": "Select ayah display mode"
         },
-        "ayaCode.showTafseerInitially": {
+        "ayaCode.showTafseer": {
           "type": "boolean",
           "default": true,
           "description": "Show tafseer initially"

@@ -46,7 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const config = vscode.workspace.getConfiguration("ayaCode");
     const ayahMode = config.get("ayahMode", "sequential") as string;
-    let showTafseer = config.get("showTafseerInitially", true) as boolean;
+    let showTafseer = config.get("showTafseer", true) as boolean;
 
     let lastShownId = context.globalState.get<number>(lastShownIdKey) ?? -1;
     let currentAyahId = getNextAyahId(ayahMode, lastShownId);
@@ -80,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
           case "toggleTafseer":
             showTafseer = !showTafseer;
             config.update(
-              "showTafseerInitially",
+              "showTafseer",
               showTafseer,
               vscode.ConfigurationTarget.Global
             );

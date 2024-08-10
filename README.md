@@ -17,7 +17,7 @@ None! Just install and enjoy.
 ## Extension Settings
 
 - `ayaCode.ayahMode`: `sequential` or `random` (default: `sequential`)
-- `ayaCode.showTafseerInitially`: `true` or `false` (default: `true`)
+- `ayaCode.showTafseer`: `true` or `false` (default: `true`)
 
 ## Known Issues
 
