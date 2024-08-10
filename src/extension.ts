@@ -8,7 +8,7 @@ const showTafseerButtonLabel = "إظهار التفسير";
 const hideTafseerButtonLabel = "إخفاء التفسير";
 
 export function activate(context: vscode.ExtensionContext) {
-  const ayatData = loadJsonData("ayat.json");
+  const ayatData = loadJsonData("quran.json");
   const tafseerData = loadJsonData("tafseer.json");
   const ayatCount = Object.keys(ayatData).length;
 
@@ -26,9 +26,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   function getNextAyahId(ayahMode: string, lastShownId: number): number {
     if (ayahMode === "sequential") {
-      return (lastShownId % ayatCount) + 1; // Circular increment
+      return (lastShownId + 1) % ayatCount; // Circular increment
     } else {
-      return Math.floor(Math.random() * ayatCount) + 1;
+      return Math.floor(Math.random() * ayatCount);
     }
   }
 
@@ -37,16 +37,20 @@ export function activate(context: vscode.ExtensionContext) {
     const ayahMode = config.get("ayahMode", "sequential") as string;
     let showTafseer = config.get("showTafseerInitially", true) as boolean;
 
-    let lastShownId = context.workspaceState.get<number>(lastShownIdKey) ?? 0;
+    let lastShownId = context.workspaceState.get<number>(lastShownIdKey) ?? -1;
     let currentAyahId = getNextAyahId(ayahMode, lastShownId);
 
     while (true) {
       context.workspaceState.update(lastShownIdKey, currentAyahId);
-
-      const ayahText = ayatData[currentAyahId].text;
-      const tafseer = tafseerData[currentAyahId];
-
-      const message = showTafseer ? `${ayahText}\n\n${tafseer}` : ayahText;
+      const ayah = ayatData[currentAyahId];
+      const ayahText = ayah.text;
+      const tafseer = tafseerData[currentAyahId].text;
+      const chapter_name = ayah.chapter_ar;
+      const verse_number = ayah.verse;
+      const messageWithoutTafseer = `${ayahText}\n${chapter_name}-${verse_number}`;
+      const message = showTafseer
+        ? `${messageWithoutTafseer}\n\n${tafseer}`
+        : messageWithoutTafseer;
 
       const result = await vscode.window.showInformationMessage(
         message,
