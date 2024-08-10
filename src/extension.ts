@@ -48,11 +48,11 @@ export function activate(context: vscode.ExtensionContext) {
     const ayahMode = config.get("ayahMode", "sequential") as string;
     let showTafseer = config.get("showTafseerInitially", true) as boolean;
 
-    let lastShownId = context.workspaceState.get<number>(lastShownIdKey) ?? -1;
+    let lastShownId = context.globalState.get<number>(lastShownIdKey) ?? -1;
     let currentAyahId = getNextAyahId(ayahMode, lastShownId);
 
     function updateWebview() {
-      context.workspaceState.update(lastShownIdKey, currentAyahId);
+      context.globalState.update(lastShownIdKey, currentAyahId);
       const ayah = ayatData[currentAyahId];
       const ayahText = ayah.text;
       const tafseer = tafseerData[currentAyahId].text;
@@ -119,15 +119,17 @@ function getWebviewContent(
                 .reference { font-size: 18px; opacity: 70%; }
                 .tafseer { font-size: 18px; margin-top: 20px; }
                 button { 
-                  font-size: 16px; padding: 5px 10px;
+                  font-size: 14px; padding: 5px 10px;
                   margin-left:10px;
                   border-radius: 10px;
+                  box-shadow: 1px 1px #777;
+                  cursor: pointer;
                 }
                 .container { 
                   width: 80%;
                   margin-right: auto;
                   margin-left: auto;
-                  margin-top: 80px;
+                  margin-top: 60px;
                 }
                 .content {
                   border:1px solid;
@@ -137,8 +139,9 @@ function getWebviewContent(
                 .control {
                   margin: 20px 0;
                   direction: ltr;
-                  float: inline-end;
+                  display: flex;
                 }
+                .close-button { margin-left: auto; }
             </style>
         </head>
         <body class="container">
@@ -152,7 +155,12 @@ function getWebviewContent(
               <button onclick="sendMessage('toggleTafseer')">${
                 showTafseer ? hideTafseerButtonLabel : showTafseerButtonLabel
               }</button>
-              <button onclick="sendMessage('close')">${closeButtonLabel}</button>
+              <button 
+                onclick="sendMessage('close')"
+                class="close-button"
+              >
+                ${closeButtonLabel}
+              </button>
             </div>
             <script>
                 const vscode = acquireVsCodeApi();
