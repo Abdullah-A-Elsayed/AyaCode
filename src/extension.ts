@@ -6,6 +6,7 @@ const lastShownIdKey = "lastShownId";
 const nextButtonLabel = "الآية التالية";
 const showTafseerButtonLabel = "إظهار التفسير";
 const hideTafseerButtonLabel = "إخفاء التفسير";
+const closeButtonLabel = "إغلاق";
 
 export function activate(context: vscode.ExtensionContext) {
   const ayatData = loadJsonData("quran.json");
@@ -59,6 +60,10 @@ export function activate(context: vscode.ExtensionContext) {
         {
           title: showTafseer ? hideTafseerButtonLabel : showTafseerButtonLabel,
           isCloseAffordance: false,
+        },
+        {
+          title: closeButtonLabel,
+          isCloseAffordance: true,
         }
       );
 
@@ -77,6 +82,8 @@ export function activate(context: vscode.ExtensionContext) {
           showTafseer,
           vscode.ConfigurationTarget.Global
         );
+      } else {
+        break;
       }
     }
   }
