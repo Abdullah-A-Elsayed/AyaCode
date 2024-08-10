@@ -1,71 +1,34 @@
-# ayat README
+# AyaCode - Start Your Coding Session with a Verse of Quran
 
-This is the README for your extension "ayat". After writing up a brief description, we recommend including the following sections.
+This extension brings the beauty and wisdom of the Quran directly into your VS Code workspace. Start your coding sessions with a verse of reflection or quickly access the Tafseer for deeper understanding.
+![snapshot](./docs/snapshots/image.png)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Verse Display:** Displays a new verse each time you open VS Code.
+- **Sequential or Random:** Choose between sequential or random verse order.
+- **Tafseer Integration:** Easily toggle the display of Tafseer (interpretation) alongside the verse.
+- **Customizable Settings:** Configure the extension to your preferences.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+None! Just install and enjoy.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `ayaCode.ayahMode`: `sequential` or `random` (default: `sequential`)
+- `ayaCode.showTafseerInitially`: `true` or `false` (default: `true`)
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- None reported yet.
 
-## Release Notes
+## Future Enhancements
 
-Users appreciate release notes as you update your extension.
+- Add the ability to quickly copy the displayed Ayah or its Tafseer to the clipboard.
 
-### 1.0.0
+## Contributing
 
-Initial release of ...
+Contributions are welcome! Please open an issue or submit a pull request.
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Ready to infuse your coding sessions with Quranic inspiration? Install AyaCode now!

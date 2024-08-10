@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
   const tafseerData = loadJsonData("tafseer.json");
   const ayatCount = Object.keys(ayatData).length;
 
-  let disposable = vscode.commands.registerCommand("ayat.showAyat", () => {
+  let disposable = vscode.commands.registerCommand("ayaCode.showAyat", () => {
     showAyat(context);
   });
 
@@ -37,14 +37,14 @@ export function activate(context: vscode.ExtensionContext) {
   function showAyat(context: vscode.ExtensionContext) {
     const panel = vscode.window.createWebviewPanel(
       "ayatView",
-      "Ayat",
+      "AyaCode",
       vscode.ViewColumn.One,
       {
         enableScripts: true,
       }
     );
 
-    const config = vscode.workspace.getConfiguration("ayat");
+    const config = vscode.workspace.getConfiguration("ayaCode");
     const ayahMode = config.get("ayahMode", "sequential") as string;
     let showTafseer = config.get("showTafseerInitially", true) as boolean;
 
@@ -112,7 +112,7 @@ function getWebviewContent(
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Ayat</title>
+            <title>AyaCode</title>
             <style>
                 body { font-family: Arial, sans-serif; text-align: right; direction: rtl; }
                 .ayah { font-size: 24px; margin-bottom: 10px; }

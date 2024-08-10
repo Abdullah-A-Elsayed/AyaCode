@@ -1,6 +1,6 @@
 {
-  "name": "ayat",
-  "displayName": "Ayat",
+  "name": "aya.code",
+  "displayName": "AyaCode",
   "description": "This plugin provides an interactive way to display a verse (Aya) from the Quran in a dialog box each time you start a new session. Choose between displaying verses in a random order or sequentially to suit your preferences.",
   "version": "0.0.1",
   "engines": {
@@ -17,14 +17,14 @@
   "contributes": {
     "commands": [
       {
-        "command": "ayat.showAyat",
-        "title": "Show Ayat"
+        "command": "ayaCode.showAyat",
+        "title": "Show AyaCode"
       }
     ],
     "configuration": {
-      "title": "Ayat Configuration",
+      "title": "AyaCode Configuration",
       "properties": {
-        "ayat.ayahMode": {
+        "ayaCode.ayahMode": {
           "type": "string",
           "default": "sequential",
           "enum": [
@@ -33,7 +33,7 @@
           ],
           "description": "Select ayah display mode"
         },
-        "ayat.showTafseerInitially": {
+        "ayaCode.showTafseerInitially": {
           "type": "boolean",
           "default": true,
           "description": "Show tafseer initially"
