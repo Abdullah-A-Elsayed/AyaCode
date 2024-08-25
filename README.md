@@ -1,6 +1,6 @@
 # AyaCode - Start Your Coding Session with a Verse of Quran
 
-This extension brings the beauty and wisdom of the Quran directly into your VS Code workspace. Start your coding sessions with a verse of reflection or quickly access the Tafseer for deeper understanding.
+This extension brings the beauty and wisdom of the Quran directly into your VS Code or Cursor editor workspace. Start your coding sessions with a verse of reflection or quickly access the Tafseer for deeper understanding.
 ![snapshot](./docs/snapshots/image.png)
 
 ## Features
@@ -9,6 +9,13 @@ This extension brings the beauty and wisdom of the Quran directly into your VS C
 - **Sequential or Random:** Choose between sequential or random verse order.
 - **Tafseer Integration:** Easily toggle the display of Tafseer (interpretation) alongside the verse.
 - **Customizable Settings:** Configure the extension to your preferences.
+
+## Compatibility
+
+AyaCode is compatible with:
+
+- Visual Studio Code (version 1.85.0 and above)
+- Cursor Editor
 
 ## Requirements
 

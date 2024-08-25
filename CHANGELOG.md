@@ -1,3 +1,14 @@
+# 1.1.0 (2024-03-21)
+
+### Features
+
+- Expanded compatibility to support Cursor editor
+- Lowered minimum required VS Code version to 1.85.0
+
+### Changes
+
+- Updated development dependencies to align with new compatibility range
+
 # 1.0.0 (2024-08-10)
 
 ### Bug Fixes
